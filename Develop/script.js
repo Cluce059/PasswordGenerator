@@ -66,59 +66,78 @@ var numericCharsQuestion = function(){
 //asks user how long they want password to be
 var passwordLengthQuestion = function(){
   var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
-  passwordLength = finalPassword.length;
-    //logic to change length to user input
+  passwordLength = parseInt(passwordLength);
+  console.log(finalPassword.length);
 };
-
-
+var length = passwordLengthQuestion();
 
 
 
 var generatePassword = function(){
 
-   
-  //uppercase question
-  var upperCaseConfirm = confirm("Do you want to include uppercase characters?");
-  if(upperCaseConfirm){
-    finalPassword += upperCase; //ask about this to confirm but since strings are global this should change the finalPassword[] string
-  }
-  else{ //if no, finalpassword remains as is
-    finalPassword += finalPassword;
-  }
-  //lowercase question
-  var lowerCaseConfirm = confirm("Do you want to include lowercase characters?");
-  if(lowerCaseConfirm){
-    finalPassword += lowerCase; //now to find out how to use math.random to select a certain number of chars to include based on user input... by using the index maybe?
-  }
-  else{
-    finalPassword += finalPassword;
-  }
-  //special char question
-  var specialCharconfirm = confirm("Do you want to include special characters?");
-  if(specialCharconfirm){
-    finalPassword += specialChars;
-  }
-  else{
-    finalPassword += finalPassword;
-  }
-  //numeric question
-  var numericCharsConfirm = confirm("Do you wan to include numbers?");
-  if(numericCharsConfirm){
-    finalPassword += numericChars;
-  }
-  else{
-    finalPassword += finalPassword;
-  }
-     //length question
-     var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
-     passwordLength = parseInt(passwordLength, 8-128);
-       if(passwordLength >= 8 && passwordLength <= 128){
-       passwordLength = finalPassword.length;     
-      }
-     else{
-       alert("you need to enter a valid length");
-       return generatePassword();
-     }
+  // var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
+  // passwordLength = parseInt(passwordLength, 8-128);
+  // if(passwordLength >= 8 && passwordLength <= 128){
+  //     passwordLength = finalPassword.length;  
+  // }
+  // console.log(passwordLength);
+
+  var passChar = '';
+  for(var i = 0; i < passwordLength; i++){
+    var char = Math.floor(Math.random()* passwordLength + 1);
+    pass += finalPassword.charAt(char);
+    return pass;
+  };
+
+
+  // //uppercase question
+  // var upperCaseConfirm = confirm("Do you want to include uppercase characters?");
+  // if(upperCaseConfirm){
+  //   finalPassword += upperCase;
+  //   console.log(finalPassword); //ask about this to confirm but since strings are global this should change the finalPassword[] string
+  // }
+  // else{ //if no, finalpassword remains as is
+  //   finalPassword += finalPassword;
+  // }
+  // //lowercase question
+  // var lowerCaseConfirm = confirm("Do you want to include lowercase characters?");
+  // if(lowerCaseConfirm){
+  //   finalPassword += lowerCase; //now to find out how to use math.random to select a certain number of chars to include based on user input... by using the index maybe?
+  // }
+  // else{
+  //   finalPassword += finalPassword;
+  // }
+  // //special char question
+  // var specialCharconfirm = confirm("Do you want to include special characters?");
+  // if(specialCharconfirm){
+  //   finalPassword += specialChars;
+  // }
+  // else{
+  //   finalPassword += finalPassword;
+  // }
+  // //numeric question
+  // var numericCharsConfirm = confirm("Do you wan to include numbers?");
+  // if(numericCharsConfirm){
+  //   finalPassword += numericChars;
+  // }
+  // else{
+  //   finalPassword += finalPassword;
+  // }
+  //    //length question
+  // var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
+  // passwordLength = parseInt(passwordLength, 8-128);
+  // if(passwordLength >= 8 && passwordLength <= 128){
+  //      passwordLength = finalPassword.length;     
+  // }
+  // else{
+  //   alert("you need to enter a valid length");
+  //   return generatePassword();
+  // }
+
+
+
+
+
 };
 //obv u should use math.random!!!ask skeletoning it first tho
 
