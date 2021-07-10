@@ -11,5 +11,5 @@ A website that offers a randomly generated password based on user criteria.
 ## Website
 
 ## Contribution
-Made with ❤️ by Caroline Luce!
+Edited with ❤️ by Caroline Luce, base code provided by  Xander Rapstine!
 
