@@ -49,7 +49,10 @@ var generatePassword = function(){
   if(specialCharconfirm){
     loadPassword = loadPassword.concat(specialChars);
   }
-
+  if(!specialCharconfirm && !upperCaseConfirm && !lowerCaseConfirm && !numericCharsConfirm){
+    alert("You have to select at least one password criteria!");
+    return false;
+  }
   //math.random logic
   var finalPassword = "";
   //finalPassword.length = passwordLength;
