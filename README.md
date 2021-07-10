@@ -14,4 +14,4 @@ https://cluce059.github.io/PasswordGenerator/
 ## Contribution
 Edited with ❤️ by Caroline Luce, base code provided by  Xander Rapstine!
 
-![applicationScreenshot](.\assets\images\Screenshot 2021-07-10 182454.jpg);
+![applicationScreenshot](assets\images\Screenshot2021-07-10182454.jpg);
