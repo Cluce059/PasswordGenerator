@@ -5,7 +5,7 @@
 //can be any special characters 
 //probably create 4 arrays for the 4 criteria that comes uo with the pop up 
 
-var finalPassword = [];//create empty array to told new password. doesnt havreto be this way but it could be woth while
+//create empty array to told new password. doesnt havreto be this way but it could be woth while
 
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", " y", "z"]; 
@@ -13,54 +13,60 @@ var specialChars = ["!", "@", "#", "$", "^", "&", "&", "*", "(", ")"];
 var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
-//asks user if they want to include uppercase letters
-var upperCaseQuestion = function(){
 
-  return;
-};
+// var upperCaseQuestion = function(){
 
-//asks user if they want to include lowercase chars
-var lowerCaseQuestion = function(){
+//   return;
+// };
 
-};
+// //asks user if they want to include lowercase chars
+// var lowerCaseQuestion = function(){
 
-//asks user if they want to include special chars
-var specialCharQuestion = function(){
+// };
 
-  return;
-};
+// //asks user if they want to include special chars
+// var specialCharQuestion = function(){
 
-//asks user if they want to include numbers
-var numericCharsQuestion = function(){
+//   return;
+// };
 
-  return;
-};
+// //asks user if they want to include numbers
+// var numericCharsQuestion = function(){
 
-//asks user how long they want password to be
-var passwordLengthQuestion = function(){
+//   return;
+// };
+
+// //asks user how long they want password to be
+// var passwordLengthQuestion = function(){
+//   var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
+//   passwordLength = parseInt(passwordLength);
+//   if(passwordLength < 8 || passwordLength > 128){
+//     alert("you must chose a length between 8-128");
+//     return false;
+//   }
+//   return passwordLength;
+// };
+
+//generate password function
+var generatePassword = function(){
+  var finalPassword = [];
+  //or//finalPassword = "";
+  // const random = Math.floor(Math.random() * upperCase.length);
+  // console.log(upperCase[random]);
+  //get user input for length
+  //finalPassword.length = passwordLengthQuestion();
   var passwordLength = prompt("how long should your password be? Must be between 8-128 characters");
   passwordLength = parseInt(passwordLength);
   if(passwordLength < 8 || passwordLength > 128){
     alert("you must chose a length between 8-128");
     return false;
   }
-  return passwordLength;
-};
-
-//generate password function
-var generatePassword = function(){
-
-  const random = Math.floor(Math.random() * upperCase.length);
-  console.log(upperCase[random]);
-
-
-  //get user input for length
-  finalPassword.length = passwordLengthQuestion();
   //does user want to include ints?
   var numericCharsConfirm = confirm("Do you wan to include numbers?");
   if(numericCharsConfirm){
     finalPassword += numericChars;
   }
+
 
   //does user want lowercase chars?
   var lowerCaseConfirm = confirm("Do you want to include lowercase characters?");
@@ -79,7 +85,15 @@ var generatePassword = function(){
   if(specialCharconfirm){
     finalPassword += specialChars;
   }
+
+  //math.random logic
+  const genPassword = [];
+  for(var i = 0; i < passwordLength; i++){
+    genPassword[i] += finalPassword[Math.floor(Math.random()*finalPassword.length)];
+  }
 console.log(finalPassword);
+//maybe here start the math.random() and geta results of passwordlength length arr?
+
 return finalPassword;
 };
 //obv u should use math.random!!!ask skeletoning it first tho
