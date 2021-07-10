@@ -1,15 +1,17 @@
- Password Generator
+## Password Generator
 
-Purpose
+## Purpose
 A website that offers a randomly generated password based on user criteria.
 
-Built With 
+## Built With 
 * HTML
 * CSS
 * Javascript
 
- Website
+## Website
+https://cluce059.github.io/PasswordGenerator/ 
 
- Contribution
+## Contribution
 Edited with ❤️ by Caroline Luce, base code provided by  Xander Rapstine!
 
+<assets\images\Screenshot 2021-07-10 182454.jpg/>
